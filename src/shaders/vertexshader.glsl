@@ -146,6 +146,6 @@ void main() {
     
 
 
-	gl_PointSize = 2.0;
+	gl_PointSize = 10.0;
 
 }

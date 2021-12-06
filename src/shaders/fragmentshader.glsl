@@ -13,5 +13,5 @@ void main(){
     vec4 colorFinal = color;
     colorFinal.a = t;
     gl_FragColor = colorFinal;
-    // if(color.r < 0.1 && color.b< 0.1 && color.g < 0.1) discard;
+    if(color.r < 0.1 && color.b< 0.1 && color.g < 0.1) discard;
 }

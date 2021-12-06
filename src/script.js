@@ -12,8 +12,8 @@ parameters.freq = 0;
 parameters.play = () => {
 
     
-    gsap.to(parameters,{freq:5,duration:5})
-    gsap.to(parameters,{freq:0,duration:5,delay:5})
+    gsap.to(mesh.material.uniforms.uFreq,{value:5,duration:5})
+    gsap.to(mesh.material.uniforms.uFreq,{value:0,duration:5,delay:5.5})
     
    
 }
@@ -32,10 +32,10 @@ const textureLoader = new THREE.TextureLoader();
 
 
 // Texture mesh
-const geometry = new THREE.PlaneBufferGeometry(512, 250, 512, 250);
+const geometry = new THREE.PlaneBufferGeometry(1, 1, 216, 216);
 const material = new THREE.ShaderMaterial({
   uniforms: {
-    uTexture: { value: textureLoader.load("/assets/unnamed.jpg") },
+    uTexture: { value: textureLoader.load("/assets/spiral.png") },
     uTime: { value: 0 },
     uFreq: { value: 0.0 },
   },
@@ -89,7 +89,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.x = 0;
 camera.position.y = 0;
-camera.position.z = 700;
+camera.position.z = 1;
 
 // Galaxy.add(camera);
 
@@ -134,7 +134,7 @@ const refresh = () => {
    *  Parameters update (uniforms)
    */
   mesh.material.uniforms.uTime.value = elapsedTime;
-  mesh.material.uniforms.uFreq.value = parameters.freq;
+  // mesh.material.uniforms.uFreq.value = parameters.freq;
 
   /**
    *  update renderer
