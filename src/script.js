@@ -134,7 +134,7 @@ const refresh = () => {
    *  Parameters update (uniforms)
    */
   mesh.material.uniforms.uTime.value = elapsedTime;
-  // mesh.material.uniforms.uFreq.value = parameters.freq;
+  mesh.material.uniforms.uFreq.value = parameters.freq;
 
   /**
    *  update renderer

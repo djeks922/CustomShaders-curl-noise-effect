@@ -136,7 +136,7 @@ void main() {
     vPosition = position;
     float time2 = cos(uTime*0.2);
     vec3 curl = vec3(position.x*2.,position.y,1.0) * curlNoise(vec3( position.x + uTime*0.1, position.y + uTime*0.1,0.0)) * time2 * uFreq;
-    curl.z = 0.;
+    // curl.z = 0.;
     vec3 finalPosition = position + curl;
 
     vec4 modelPosition = modelMatrix * vec4(finalPosition,1.0);
